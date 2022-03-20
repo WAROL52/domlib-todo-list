@@ -1270,7 +1270,7 @@ class Domlib {
                   throw `In ${el.localName}[${attr.name}='${attr.value}'] : '${attr.value}' must be a function `
                 }
                 try{
-                  func({el,handler:option.handler,opt:'function'})
+                  func.call(el,{el,handler:option.handler,opt:'function'})
                 }catch(e){
                   console.warn(`In ${el.localName}[${attr.name}='${attr.value}'] : '${attr.value}' ${e.message}`);
                   throw `In ${el.localName}[${attr.name}='${attr.value}'] : '${attr.value}' ${e.message} `
